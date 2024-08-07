@@ -1,0 +1,257 @@
+
+<main>
+  <div class="section ">
+    <div class="container-fluid g-0 h-100">
+      <div class="row g-0 align-items-strech fitt_height">
+        <div class="col-sm-12 co-md-12 col-lg-6  bg_white_gray d-flex align-items-center fitt_height" >
+          <div class="lovogen_banner" >
+            <div class="row d-block d-sm-none" >
+              <div class="col" >
+                <div class="content pt-4 pb-3" >
+                  <h1 class="headline clr_primary mb-3 lh-1 text-center" > Iron Completes Nutrition </h1>
+                </div>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="col-5 col-md-6 col-lg-6 self-align-end d-flex align-items-end" > <img src="assets/images/livogen-dr.png" alt="" class="" > </div>
+              <div class="col-7 col-md-6 col-lg-6" >
+                <div class="content " >
+                  <h1 class="headline clr_primary mb-3 lh-1 d-none d-sm-block" > Iron <br>
+                    Completes <br>
+                    Nutrition </h1>
+                  <p class="subtext" > <strong>The absence of Iron in daily nutrition can lead to health</strong> issues like weakness, fatigue, shortness of breath, and more. </p>
+                </div>
+              </div>
+            </div>
+            <div class="banner_band" > <img class="brand_img" src="assets/images/initiative-by-livogen.png" alt=""> </div>
+          </div>
+        </div>
+        <div class="col-sm-12 co-md-12 col-lg-6 d-flex align-items-center justify-content-center livogen_content_block_wrapp ">
+          <div class="livogen_content_block d-flex align-items-center justify-content-center step_1">
+            <div class="container g-0 text-center ">
+              <div class="application_block text-center" >
+                <div class="row">
+                  <div class="col-sm-12 ">
+                    <tabset #staticTabs >
+
+                    
+                     
+                      <tab id="tab0" >
+                      <div class="row mb-4">
+                        <div class="col-sm-12 mb-2">
+                          <div class="mb-0 display-6 main_heading"> Select Language </div>
+                         
+                        </div>
+                        <div class="col-sm-12">
+                          <p class="mb-0" style="font-weight: 500;" >Please select the language for your banner and video. </p>
+                        </div>
+                      </div>
+                      <div class="row mb-5 " >
+                        <div class="col-sm-12" >
+                          <div style="max-width: 400px; margin: 0 auto;" >
+                            <div class="row " >
+                              <div class="col" >
+                                <div class="form-check language_box">
+                                  <input class="form-check-input" type="radio" name="language" id="english" [(ngModel)]="selectedLanguage" value="en" checked>
+                                  <span class="title" >English</span>
+                                  <label class="form-check-label ratio ratio-1x1" for="english"> A </label>
+                                </div>
+                              </div>
+                              <div class="col" >
+                                <div class="form-check language_box">
+                                  <input class="form-check-input" type="radio" name="language" id="hindi" [(ngModel)]="selectedLanguage" value="hi" >
+                                  <span class="title" >Hindi</span>
+                                  <label class="form-check-label ratio ratio-1x1" for="hindi"> आ </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row" >
+                        <div>
+                          <button  class="btn btn-lg btn-primary" (click)="selectTab(1)" >Proceed</button>
+                        </div>
+                      </div>
+                      </tab>
+
+                      <tab id="tab1" >
+                      <div class="row mb-4">
+                        <div class="col-sm-12 mb-2">
+                          <div class="mb-0 display-6 main_heading"> Fill the details. </div>
+                        
+                        </div>
+                        <div class="col-sm-12">
+                          <p class="mb-0" style="font-weight: 500;" > The information you enter will appear in your generated videos and banners</p>
+                        </div>
+                      </div>
+                      <form [formGroup]="leadForm" class="form_wrapp" >
+                        <div class="row mb-3">
+                          <div class="col-sm-12">
+                            <div class="mb-3"  >
+                              <p class="translated_text" *ngIf="selectedLanguage == 'hi'" ><b>पूरा नाम:</b> {{translatedfullName}}</p>
+                            <div class="form-floating ">
+                              <input type="text" class="form-control" id="fullName" formControlName="fullName" (keyup)="whileTyping()" >
+                              <label for="fullName">Full Name</label>
+                              <span class="error" *ngIf="fullName && fullName.invalid && fullName.touched && fullName.pristine">This field is required</span> <span class="error" *ngIf="fullName && fullName.invalid && fullName.touched && fullName.dirty">Please provide your full name.</span>
+                            </div>
+                            
+                           </div>
+                           <div class="mb-3"  >
+                           <p class="translated_text" *ngIf="selectedLanguage == 'hi'" >फ़ोन नंबर: {{translatedPhoneNumber}}</p>
+                            <div class="form-floating mb-3">
+                              <input type="text" class="form-control" id="phoneNumber" formControlName="phoneNumber" (keyup)="whileTyping()" >
+                              <label for="Number">Phone Number</label>
+                              <span class="error" *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched && phoneNumber.pristine">This field is required</span> <span class="error" *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched && phoneNumber.dirty">Please provide a valid phone number.</span> </div>
+                            </div>
+                            <div class="mb-3"  >
+                              <p class="translated_text" *ngIf="selectedLanguage == 'hi'" >क्लिनिक का पता: {{translatedAddress}}</p>
+                              <div class="form-floating mb-3">
+                              <textarea class="form-control" id="address" formControlName="address" style="height:100px;max-height:100px;" (keyup)="whileTyping()" ></textarea>
+                              <label for="address">Clinic Address</label>
+                              <span class="error" *ngIf="address && address.invalid && address.touched && address.pristine">This field is required</span> <span class="error" *ngIf="address && address.invalid && address.touched && address.dirty">Please provide a valid address.</span> </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-12 mt-4 mb-3">
+                            <button  class="btn btn-lg btn-primary" (click)="selectTab(2)" [disabled]="leadForm.invalid">Proceed</button>
+                          </div>
+                          <div>
+                            <button type="submit" class="btn btn-sm btn-link" (click)="selectTab(0)" ><i class="fa fa-long-arrow-left me-2" aria-hidden="true"></i> Back</button>
+                          </div>
+                        </div>
+                      </form>
+                      </tab> 
+
+                      <tab id="tab2" >
+                        <div class="row mb-3">
+                          <div class="col-sm-12 mb-2">
+                            <div class="mb-0 display-6 main_heading">Please upload your photo </div>
+                          </div>
+                          <div class="col-sm-12">
+                            <p class="clr_gray mb-0"> Picture needs to be less than 5 MB</p>
+                          </div>
+                        </div>
+                        <div class="row" >
+                          <div class="col-sm-12" >
+                            <div class="mb-4 ">
+                              <div class="row align-items-end"  >
+                                <div class="col-sm-12 mb-4" >
+                                  <div class="preview_photo" >
+                                    <div class="ratio" >
+                                      <div class="photo"> <img [src]="croppedImagePreview" /> </div>
+                                    </div>
+                                    <span *ngIf="originalImageFile" (click)="reEditImg()" class="edit_photo" ><i class="fa fa-crop" aria-hidden="true"></i></span> </div>
+                                </div>
+                                <div class="col-sm-12" >
+                                  <div class="row" >
+                                    <div class="col" >
+                                      <label for="imageInput" class="btn w-100 btn-outline-primary"><i class="fa fa-upload me-2" aria-hidden="true"></i> Upload Photo</label>
+                                      <input class="form-control d-none " type="file" id="imageInput" accept="image/*" (change)="onImageSelected($event)"  >
+                                    </div>
+                                    
+                                    <div class="col d-none d-lg-block" >
+                                      <button class="btn btn-outline-primary w-100"  (click)="takePicture.show(); startCamera()" ><i class="fa fa-camera me-2" aria-hidden="true"></i> Take a Picture </button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mb-2" >
+                              <button *ngIf="finalImageFile" type="submit" class="btn btn-lg btn-primary" (click)="submitLead();" >Click here to generate</button>
+                            </div>
+                            <div>
+                              <button type="submit" class="btn btn-sm btn-link" (click)="selectTab(1)" ><i class="fa fa-long-arrow-left me-2" aria-hidden="true"></i> Back</button>
+                            </div>
+                          </div>
+                        </div>
+                        </tab>
+
+                      <tab id="tab3" >
+                      <div class="row mb-5">
+                        <div class="col-sm-12 mb-2">
+                          <div class="mb-0 display-6 main_heading">All Done!</div>
+                        </div>
+                        <div class="col-sm-12">
+                          <p class="clr_gray mb-0">You can download your customised material.</p>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col-sm-12 col-md-6 mb-4">
+                          <div class="mb-3 final_media">
+                            <div class="ratio ratio-1x1"> <img [src]="generatedBannerLink" alt="Generated Banner" style="object-fit: cover;
+                              object-position: top;" > </div>
+                          </div>
+                          <div><a [href]="generatedBannerLink" download class="btn btn-outline-primary"><i class="fa fa-cloud-download me-1"  aria-hidden="true"></i> Download Banner</a> </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6 mb-4">
+                          <div class="mb-3 final_media">
+                            <div class="ratio ratio-1x1">
+                              <video [poster]="generatedBannerLink" autoplay muted loop controls [src]="generatedVideoLink" type="video/mp4" ></video>
+                            </div>
+                          </div>
+                          <div><a [href]="generatedVideoLink" download class="btn btn-outline-primary"><i class="fa fa-cloud-download me-1"  aria-hidden="true"></i> Download Video</a></div>
+                        </div>
+                      </div>
+                      </tab>
+
+                    </tabset>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="overlay" *ngIf="overlayLoader" >
+              <div class="h-100 w-100 d-flex align-items-center justify-content-center " >
+                <div class="text-center" >
+                  <div  > <span class="spinner" ><i class="fa fa-spinner" aria-hidden="true"></i></span>
+                    <div id="progress" class="fs-6 mt-3"  style="font-weight: 500;" >Please wait, it's processing... <b>{{progress}}%</b> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<ng-template #cropImageModal>
+  <button type="button" class="btn-close close pull-right" aria-label="Close"  (click)="closeModal()"> <span aria-hidden="true" class="visually-hidden">&times;</span> </button>
+  <div class="modal-body">
+    <image-cropper
+      [imageChangedEvent]="imageChangedEvent"
+      [maintainAspectRatio]="true"
+      [aspectRatio]="2 / 2.5"
+      format="png"
+      (imageCropped)="imageCropped($event)"></image-cropper>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary w-100" aria-label="Close"  (click)="closeModal();" >Crop</button>
+  </div>
+</ng-template>
+
+<div class="modal fade" bsModal #takePicture="bs-modal" >
+  <div class="modal-dialog modal-md modal-dialog-centered">
+    <div class="modal-content">
+      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="takePicture.hide(); stopCamera()" > <span aria-hidden="true" class="visually-hidden">&times;</span> </button>
+      <div class="modal-body">
+        <div class="camera_wrapper" >
+          <video #videoElement width="{{ width }}" height="{{ height }}"></video>
+          <canvas #canvasElement style="display: none;"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="w-100" >
+          <div class="row" >
+            <div class="col" >
+              <button type="button" *ngIf="showcapture == false" class="btn btn-primary w-100" (click)="capture();" ><i class="fa fa-camera me-2" aria-hidden="true"></i> Take Photo</button>
+              <button type="button" *ngIf="showcapture == true" class="btn btn-primary w-100" (click)="reCapture();" ><i class="fa fa-camera me-2" aria-hidden="true"></i> Re Take Once</button>
+            </div>
+            <div class="col" *ngIf="showcapture == true" >
+              <button type="button" class="btn btn-outline-primary w-100" aria-label="Close" (click)="takePicture.hide(); stopCamera()" >Upload</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
