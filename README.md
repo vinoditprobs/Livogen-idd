@@ -6,7 +6,7 @@ This project is the client-side application for the Livogen Iron Deficiency camp
 
 ## Technologies Used
 
-- **Framework:** Angular
+- **Framework:** Angular 15.2.0
 - **Language:** TypeScript
 - **Frontend:** HTML, CSS, JavaScript
 
