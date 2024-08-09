@@ -1,27 +1,23 @@
-# LivogenIdd
+# Livogen Iron Deficiency Campaign - Client-Side
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.8.
+## Project Overview
 
-## Development server
+This project is the client-side application for the Livogen Iron Deficiency campaign, complementing the backend API developed using Node.js and ffmpeg. It allows users to interact with the website and provides a user-friendly interface to enter personal information and receive personalized banners and videos branded with Livogen.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
 
-## Code scaffolding
+- **Framework:** Angular
+- **Language:** TypeScript
+- **Frontend:** HTML, CSS, JavaScript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Interactive UI for users to enter their information.
+- Seamless integration with the backend API to generate personalized content.
+- Responsive design ensuring accessibility across different devices.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Setup and Installation
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
