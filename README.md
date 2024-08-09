@@ -20,4 +20,4 @@ This project is the client-side application for the Livogen Iron Deficiency camp
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/vinoditprobs/Livogen-idd.git>
